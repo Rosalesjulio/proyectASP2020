@@ -90,6 +90,30 @@ plt.ylabel('frecuency')
 
 # ### 5.d Split the data as usual into a test and training set 
 
+# In[23]:
+
+
+from sklearn.model_selection import train_test_split
+
+
+# In[24]:
+
+
+X = data.drop('Y', axis = 1)
+Y = data['Y']
+
+
+# In[25]:
+
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.33, random_state = 5)
+parameters = {'alpha': np.concatenate((np.arange(0.1,2,0.1), np.arange(2, 5, 0.5), np.arange(5, 25, 1)))}
+print(X_train.shape)
+print(X_test.shape)
+print(Y_train.shape)
+print(Y_test.shape)
+
+
 # In[ ]:
 
 
